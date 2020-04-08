@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 puts("Welcome! Let's Play Tic Tac Toe")
 
 # TODO: display board
@@ -13,12 +12,18 @@ player2 = STDIN.gets.chomp
 
 puts('Ready to start!')
 
-puts("#{player1} make your move (1-9)")
-# TODO: check input
-# TODO: if valid, transfer choice to board
+loop do
+  puts("#{player1} make your move (1-9)")
+  # TODO: check input
+  # TODO: if valid, transfer choice to board, else ask again
 
-puts("#{player2} make your move (1-9)")
-# TODO: check input
-# TODO: if valid, transfer choice to board
-# TODO: match round to see if have a win or draw
-# TODO: if win show victory, else next round
+  puts("#{player2} make your move (1-9)")
+  # TODO: check input
+  # TODO: if valid, transfer choice to board
+
+  if state == 'end'
+    # TODO: check if has a win or if board become full
+    # otherwise play another match
+    break
+  end
+end
