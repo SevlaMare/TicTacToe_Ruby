@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 p("Welcome! Let's Play Tic Tac Toe")
 
 # TODO: display board
