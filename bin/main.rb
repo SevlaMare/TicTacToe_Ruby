@@ -25,5 +25,11 @@ loop do
   puts("\n\n")
   # TODO: check if has a win or if board become full
   # otherwise play another match
-  break if true
+  # break if win || full
+  break
 end
+
+puts('The End')
+# TODO: display winner
+puts('You want start a new round?')
+# TODO: start again or exit
