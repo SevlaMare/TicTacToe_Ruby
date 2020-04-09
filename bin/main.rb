@@ -32,7 +32,7 @@ loop do
   break
 end
 
-# Trigger when game end (comes from class engine)
+# Trigger when game end (comes from class engineclear)
 puts('The End')
 # TODO: display winner (method from class player)
 puts('You want start a new round?')
