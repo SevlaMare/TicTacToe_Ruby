@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-puts 'Hello world!'
-# get.chomp
+
+puts("Welcome! Let's Play Tic Tac Toe\n\n")
