@@ -22,14 +22,10 @@ class Board
 end
 
 class Engine < Board
-  # should return true twice to procced
+  # (choice, player)
   def input_check(choice)
-    return unless choice.between?(1, 9) ? true : false
-
-    # if choice already taken by player1, so is a draw
-    @field[choice] == 'X' # implity ?  true : false
-    # TODO: will need sweep all field
-    # if more than one round
+    true if choice.between?(1, 9) && @field[choice - 1] != 'X'
+    # TODO: for the 2 round and on, need check which player is
   end
 
   def play_match
@@ -38,38 +34,39 @@ class Engine < Board
   end
 end
 
-# Main game loop
+# MAIN GAME LOOP
 play = true
 while play
-  puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
+  puts("\n#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
+  # BUILD GAME MATCH
   game = Engine.new
   game.board_display
 
-  # check if have a win or draw
+  # PLAY ROUND
+  (1..2).each do |i|
+    player = i
+    puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
+
+    loop do
+      choice = STDIN.gets.chomp.to_i
+      # Basic check, should be a number 1-9
+      if game.input_check(choice)
+        game.board_update(choice, player)
+        game.board_display
+        break
+      else
+        puts 'Value Invalid, Try again (1-9):'
+      end
+    end
+  end
+
+  # CHECK WIN OR DRAW
   if game.play_match == 'win'
     puts("\nPlayer 1 Wins\nCongratulations!")
     play = false
   elsif play_match == 'draw'
     puts("\nIt's a draw!")
     play = false
-  end
-end
-
-(1..2).each do |i|
-  player = i
-  puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
-  loop do
-    choice = STDIN.gets.chomp.to_i
-
-    # Basic check, should be a number 1-9
-    if game.input_check(choice)
-      game.board_update(choice, player)
-      game.board_display
-      # play match - return draw or win
-      # break
-    else
-      puts 'Value Invalid, Try again (1-9):'
-    end
   end
 end
