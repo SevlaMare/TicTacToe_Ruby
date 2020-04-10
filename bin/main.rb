@@ -2,16 +2,6 @@
 
 puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
-def input
-  puts("\nPlayer 1 make your move\n(Choice between 1-9):")
-  loop do
-    choice = STDIN.gets.chomp.to_i
-    break if choice.between?(1, 9)
-
-    puts 'Value Invalid, Try again (1-9):'
-  end
-end
-
 class Board
   # attr_accessor :field
 
@@ -27,20 +17,31 @@ class Board
     )
   end
 
-  def change_spot
+  def change_spot(choice, player)
     choice -= 1
     @field[choice] = player == 1 ? 'X' : 'O'
   end
 end
 
 # Control game flow
-def run
-  game1 = Board.new
-  game1.display_board
-  input
-end
+game = Board.new
+game.display_board
 
-run
+(1..2).each do |i|
+  player = i
+  puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
+  loop do
+    # INPUT validation
+    choice = STDIN.gets.chomp.to_i
+    if choice.between?(1, 9)
+      game.change_spot(choice, player)
+      game.display_board
+      break
+    else
+      puts 'Value Invalid, Try again (1-9):'
+    end
+  end
+end
 
 puts("\nPlayer 1 Wins\nCongratulations!")
 
