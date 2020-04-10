@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
-
-# TODO: This class will be moved for another file
 class Board
   # attr_accessor :field
 
@@ -10,7 +7,7 @@ class Board
     @field = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-  def display_board
+  def board_display
     puts(
       "\n #{@field[0]} | #{@field[1]} | #{@field[2]}"\
       "\n #{@field[3]} | #{@field[4]} | #{@field[5]}"\
@@ -18,37 +15,61 @@ class Board
     )
   end
 
-  def change_spot(choice, player)
+  def board_update(choice, player)
     choice -= 1
     @field[choice] = player == 1 ? 'X' : 'O'
   end
 end
 
-# TODO: Class Engine will have all game logic inside
 class Engine < Board
+  # should return true twice to procced
+  def input_check(choice)
+    return unless choice.between?(1, 9) ? true : false
+
+    # if choice already taken by player1, so is a draw
+    @field[choice] == 'X' # implity ?  true : false
+    # TODO: will need sweep all field
+    # if more than one round
+  end
+
+  def play_match
+    # will check if has a winner
+    'win'
+  end
 end
 
-# TODO: Line below should be the only code outside a class
-game = Engine.new
-game.display_board
+# Main game loop
+play = true
+while play
+  puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
-# TODO: only input and puts should not come from Engine
+  game = Engine.new
+  game.board_display
+
+  # check if have a win or draw
+  if game.play_match == 'win'
+    puts("\nPlayer 1 Wins\nCongratulations!")
+    play = false
+  elsif play_match == 'draw'
+    puts("\nIt's a draw!")
+    play = false
+  end
+end
+
 (1..2).each do |i|
   player = i
   puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
   loop do
-    # TODO: split logic and input
     choice = STDIN.gets.chomp.to_i
 
-    # TODO: more checks for validation
-    if choice.between?(1, 9)
-      game.change_spot(choice, player)
-      game.display_board
-      break
+    # Basic check, should be a number 1-9
+    if game.input_check(choice)
+      game.board_update(choice, player)
+      game.board_display
+      # play match - return draw or win
+      # break
     else
       puts 'Value Invalid, Try again (1-9):'
     end
   end
 end
-
-puts("\nPlayer 1 Wins\nCongratulations!")
