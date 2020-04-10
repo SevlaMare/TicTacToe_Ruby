@@ -2,6 +2,7 @@
 
 puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
+# This class will be moved for another file
 class Board
   # attr_accessor :field
 
@@ -23,16 +24,23 @@ class Board
   end
 end
 
-# Control game flow
-game = Board.new
+# Class Engine will have all game logic inside
+class Engine < Board
+end
+
+# Line below should be the only code outside a class
+game = Engine.new
 game.display_board
 
+# INPUT - will be a single function
 (1..2).each do |i|
   player = i
   puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
   loop do
-    # INPUT validation
+    # INPUT
     choice = STDIN.gets.chomp.to_i
+
+    # VALIDATION - will come from a external class
     if choice.between?(1, 9)
       game.change_spot(choice, player)
       game.display_board
@@ -44,7 +52,3 @@ game.display_board
 end
 
 puts("\nPlayer 1 Wins\nCongratulations!")
-
-# ask player to select from available moves.
-# inform player if selected move is invalid.
-# display board after player move.
