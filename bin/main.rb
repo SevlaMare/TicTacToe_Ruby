@@ -3,8 +3,9 @@
 puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
 def input
-  puts("\nPlayer #{player} make your move\n(Choice between 1-9):")
+  puts("\nPlayer 1 make your move\n(Choice between 1-9):")
   choice = STDIN.gets.chomp.to_i
+  puts 'okay' if choice.between?(1, 9)
 end
 
 class Board
@@ -26,13 +27,12 @@ end
 game1 = Board.new
 game1.display_board
 
-
 def run
   # Control game flow
-  input()
+  input
 end
 
-run()
+run
 # ask player to select from available moves.
 # inform player if selected move is invalid.
 # display board after player move.
