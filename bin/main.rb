@@ -2,8 +2,13 @@
 
 puts("#{' ' * 6}Welcome!\nLet's Play Tic Tac Toe")
 
+def input
+  puts("\nPlayer #{player} make your move\n(Choice between 1-9):")
+  choice = STDIN.gets.chomp.to_i
+end
+
 class Board
-  attr_accessor :field
+  # attr_accessor :field
 
   def initialize
     @field = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -20,3 +25,14 @@ end
 
 game1 = Board.new
 game1.display_board
+
+
+def run
+  # Control game flow
+  input()
+end
+
+run()
+# ask player to select from available moves.
+# inform player if selected move is invalid.
+# display board after player move.
