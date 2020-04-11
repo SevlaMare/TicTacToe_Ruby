@@ -29,7 +29,7 @@ class Engine < Board
     @field[choice - 1] == 'x' || @field[choice - 1] == 'o'
   end
 
-  def win?
+  def win?(player)
     # TODO: check if is a winning move
     "\nPlayer #{player} Wins\nCongratulations!"
   end
@@ -42,7 +42,7 @@ end
 game = Engine.new
 game.board_display
 
-round = 0
+round = 0 # WIN OR DRAW SHOULD STOP THE LOOP
 while round <= 1
   (1..2).each do |i|
     player = i
