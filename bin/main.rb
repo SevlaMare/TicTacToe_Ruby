@@ -28,8 +28,7 @@ class Engine < Board
   # return true if spot is already taken
   def input_spot(choice, player)
     spot = player == 2 ? 'x' : 'o'
-    # @field[choice - 1] == spot ? true : false
-    @field[choice - 1] == spot
+    puts 'Draw move! Spot already taken' if @field[choice - 1] == spot
   end
 
   def win_or_draw
@@ -58,11 +57,9 @@ while play
       if game.input_number(choice)
         game.input_spot(choice, player)
 
-        # TODO: say if is a draw MOVE
         game.board_update(choice, player)
         game.board_display
 
-        # TODO: show who win
         play = false
         ask_input = false
       else
