@@ -1,43 +1,6 @@
 #!/usr/bin/env ruby
-
-class Board
-  def initialize
-    @field = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  end
-
-  def board_display
-    puts(
-      "\n #{@field[0]} | #{@field[1]} | #{@field[2]}"\
-      "\n #{@field[3]} | #{@field[4]} | #{@field[5]}"\
-      "\n #{@field[6]} | #{@field[7]} | #{@field[8]}"
-    )
-  end
-
-  def board_update(choice, player)
-    choice -= 1
-    @field[choice] = (player == 1 ? 'x' : 'o')
-  end
-end
-
-class Engine < Board
-  def input_number?(choice)
-    choice.between?(1, 9)
-  end
-
-  # return true if spot is already taken
-  def spot_taken?(choice)
-    @field[choice - 1] == 'x' || @field[choice - 1] == 'o'
-  end
-
-  def win?(player)
-    # TODO: check if is a winning move
-    "\nPlayer #{player} Wins\nCongratulations!"
-  end
-
-  def draw
-    # TODO: trigger after 9 moves no winner
-  end
-end
+require_relative '../lib/board.rb'
+require_relative '../lib/engine.rb'
 
 game = Engine.new
 game.board_display
