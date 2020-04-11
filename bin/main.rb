@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
+# TODO: implement private attributes wherever is possible
 class Board
-  # attr_accessor :field
-
   def initialize
     @field = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
@@ -17,20 +16,24 @@ class Board
 
   def board_update(choice, player)
     choice -= 1
-    @field[choice] = player == 1 ? 'X' : 'O'
+    @field[choice] = player == 1 ? 'x' : 'o'
   end
 end
 
 class Engine < Board
-  # (choice, player)
-  def input_check(choice)
-    true if choice.between?(1, 9) && @field[choice - 1] != 'X'
-    # TODO: for the 2 round and on, need check which player is
+  def input_number(choice)
+    true if choice.between?(1, 9)
   end
 
-  def play_match
-    # will check if has a winner
-    'win'
+  # return true if spot is already taken
+  def input_spot(choice, player)
+    spot = player == 2 ? 'x' : 'o'
+    # @field[choice - 1] == spot ? true : false
+    @field[choice - 1] == spot
+  end
+
+  def win_or_draw
+    "\nPlayer #{player} Wins\nCongratulations!"
   end
 end
 
@@ -48,25 +51,23 @@ while play
     player = i
     puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
 
-    loop do
+    ask_input = true
+    while ask_input
       choice = STDIN.gets.chomp.to_i
-      # Basic check, should be a number 1-9
-      if game.input_check(choice)
+
+      if game.input_number(choice)
+        game.input_spot(choice, player)
+
+        # TODO: say if is a draw MOVE
         game.board_update(choice, player)
         game.board_display
-        break
+
+        # TODO: show who win
+        play = false
+        ask_input = false
       else
         puts 'Value Invalid, Try again (1-9):'
       end
     end
-  end
-
-  # CHECK WIN OR DRAW
-  if game.play_match == 'win'
-    puts("\nPlayer 1 Wins\nCongratulations!")
-    play = false
-  elsif play_match == 'draw'
-    puts("\nIt's a draw!")
-    play = false
   end
 end
