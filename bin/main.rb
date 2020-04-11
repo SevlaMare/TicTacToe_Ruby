@@ -25,7 +25,7 @@ class Engine < Board
   end
 
   # return true if spot is already taken
-  def spot_taken?(choice, player)
+  def spot_taken?(choice)
     @field[choice - 1] == 'x' || @field[choice - 1] == 'o'
   end
 
@@ -43,7 +43,7 @@ game = Engine.new
 game.board_display
 
 round = 0
-while round <= 2
+while round <= 1
   (1..2).each do |i|
     player = i
 
@@ -52,7 +52,7 @@ while round <= 2
       choice = STDIN.gets.chomp.to_i
 
       if game.input_number?(choice)
-        unless game.spot_taken?(choice, player)
+        if !game.spot_taken?(choice)
           game.board_update(choice, player)
           game.board_display
           break
@@ -60,10 +60,9 @@ while round <= 2
           puts "\nSpot already taken, try another"
         end
       end
-
     end
   end
   puts "end round #{round}"
   round += 1
 end
-puts "player 1 win"
+puts 'player 1 win'
