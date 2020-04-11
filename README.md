@@ -37,7 +37,7 @@ The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/r
 
 ## Live Demo
 
-[Run on Repl.it](https://repl.it/@ThiagoMiranda2/TicTacToe_Ruby)
+[Run on Repl.it](https://repl.it/@ThiagoMiranda2/tictactoeruby)
 
 ## Quick Start
 
