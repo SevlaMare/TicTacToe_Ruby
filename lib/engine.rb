@@ -5,7 +5,7 @@ class Engine < Board
 
   # return true if spot is already taken
   def spot_taken?(choice)
-    @field[choice - 1] == 'x' || @field[choice - 1] == 'o'
+    @field[choice - 1] == 'x' or @field[choice - 1] == 'o'
   end
 
   def win?(player)
@@ -23,6 +23,8 @@ class Engine < Board
   end
 
   def full_board?
-    # TODO: trigger after 9 moves no winner
+    return true if @field.none?(Numeric)
+
+    false
   end
 end
