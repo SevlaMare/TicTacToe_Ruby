@@ -9,11 +9,20 @@ class Engine < Board
   end
 
   def win?(player)
-    # TODO: check if is a winning move
-    "\nPlayer #{player} Wins\nCongratulations!"
+    win = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], # i
+      [0, 3, 6], [1, 4, 7], [2, 5, 8], # j
+      [0, 4, 8], [2, 4, 6] # i, j
+    ]
+
+    mark = (player == 1 ? 'x' : 'o')
+    win.each do |sub_array|
+      return true if sub_array.all? { |element| @field[element] == mark }
+    end
+    false
   end
 
-  def draw
+  def full_board?
     # TODO: trigger after 9 moves no winner
   end
 end
