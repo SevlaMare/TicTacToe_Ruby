@@ -27,11 +27,11 @@ while play
 
     if game.win?(player)
       play = false
-      puts("Win! Congratulations Player #{player}")
+      puts("\nWin! Congratulations Player #{player}")
       break
     elsif game.full_board?
       play = false
-      puts('Draw, due full board')
+      puts("\nDraw, due full board")
       break
     end
   end
