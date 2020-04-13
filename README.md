@@ -49,20 +49,20 @@ To play online, go to the page and hit (Run) button.
 
 ## Quick Start
 
-To get a local copy use:<br>
+#### Get a local copy with:<br>
 ```js
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
 ```
 Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
 
-To run on terminal/prompt:
+#### Run on terminal/prompt:
 
 If you are on windows:
 * Go inside the project folder
 * Right shift '+' right mouse click (Float menu)
 * Open prompt here (Option)
 ```js
-ruby bin/main.rb (need ruby installed)
+ruby bin/main.rb
 ```
 for linux:
 ```js
