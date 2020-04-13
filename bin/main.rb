@@ -3,11 +3,11 @@ require_relative '../lib/board.rb'
 require_relative '../lib/engine.rb'
 
 game = Engine.new
-game.board_display
+puts game.board_display
 
-round = 0 # WIN OR DRAW SHOULD STOP THE LOOP
-while round <= 1
-  (1..2).each do |i|
+play = true
+while play
+  (1..2).each do |i| # need stop if has win on 1 of 2
     player = i
 
     loop do
@@ -17,15 +17,22 @@ while round <= 1
       if game.input_number?(choice)
         if !game.spot_taken?(choice)
           game.board_update(choice, player)
-          game.board_display
+          puts game.board_display
           break
         else
           puts "\nSpot already taken, try another"
         end
       end
     end
+
+    if game.win?(player)
+      play = false
+      puts("Win! Congratulations Player #{player}")
+      break
+    elsif game.full_board?
+      play = false
+      puts('Draw, due full board')
+      break
+    end
   end
-  puts "end round #{round}"
-  round += 1
 end
-puts 'player 1 win'
