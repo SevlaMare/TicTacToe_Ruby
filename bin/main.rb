@@ -7,7 +7,7 @@ puts game.board_display
 
 play = true
 while play
-  (1..2).each do |i| # need stop if has win on 1 of 2
+  (1..2).each do |i|
     player = i
 
     loop do

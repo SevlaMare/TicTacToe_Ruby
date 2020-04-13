@@ -1,10 +1,10 @@
 # Tic Tac Toe
-> A classic mini game to play by command line.
+> A quick classic mini game to play by command line.
 
 ![screenshot](./images/screenshot.png)
 
 <br>The focus here is to use oriented programming concepts.<br>
-The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+The project specifications can be see in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 ## Content
 
@@ -23,9 +23,10 @@ The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/r
 
 <ul>
   <h3>Features</h3>
-  <li>Get user input</li>
-  <li>Display a board</li>
-  <li>Stop if someone win</li>
+  <li>Get a valid user input</li>
+  <li>Display board after each move</li>
+  <li>End game if someone win</li>
+  <li>End game if board become full</li>
 </ul>
 
 ### Built With
@@ -37,6 +38,7 @@ The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/r
 
 ## Live Demo
 
+To play online, go to the page and hit (Run) button.
 [Run on Repl.it](https://repl.it/@ThiagoMiranda2/tictactoeruby)
 
 ## Quick Start
