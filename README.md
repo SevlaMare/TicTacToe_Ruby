@@ -54,6 +54,17 @@ To get a local copy use:<br>
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
 ```
 
+To run on terminal/prompt:
+
+If you are on windows:
+* Go inside the project folder
+* right shift '+' right mouse click
+* open prompt here
+* ruby bin/main.rb (need ruby installed)
+
+for linux:
+* bin/main.rb
+
 ### Dependencies
 
 Ruby 2.5.5
