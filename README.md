@@ -53,17 +53,21 @@ To get a local copy use:<br>
 ```js
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
 ```
+Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
 
 To run on terminal/prompt:
 
 If you are on windows:
 * Go inside the project folder
-* right shift '+' right mouse click
-* open prompt here
-* ruby bin/main.rb (need ruby installed)
-
+* Right shift '+' right mouse click (Float menu)
+* Open prompt here (Option)
+```js
+ruby bin/main.rb (need ruby installed)
+```
 for linux:
-* bin/main.rb
+```js
+bin/main.rb
+```
 
 ### Dependencies
 
