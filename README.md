@@ -19,6 +19,12 @@ The project specifications can be see in [Odin Project](https://www.theodinproje
 * [License](#license)
 
 
+## Game rules.
+* Two players play
+* Each play draw X or O alternately on board
+* The game ends when someone get 3 marks in a row
+* The row can be vertical, horizontal or diagonal 
+
 ## Requirements
 
 <ul>
