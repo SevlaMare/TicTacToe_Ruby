@@ -1,10 +1,10 @@
 # Tic Tac Toe
-> A classic mini game to play by command line.
+> A quick classic mini game to play by command line.
 
 ![screenshot](./images/screenshot.png)
 
 <br>The focus here is to use oriented programming concepts.<br>
-The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+The project specifications can be see in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 ## Content
 
@@ -18,14 +18,20 @@ The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/r
 * [Author](#author)
 * [License](#license)
 
+## Game rules.
+* Two players play
+* Each play draw X or O alternately on board
+* The game ends when someone get 3 marks in a row
+* The row can be vertical, horizontal or diagonal 
 
 ## Requirements
 
 <ul>
   <h3>Features</h3>
-  <li>Get user input</li>
-  <li>Display a board</li>
-  <li>Stop if someone win</li>
+  <li>Get a valid user input</li>
+  <li>Display board after each move</li>
+  <li>End game if someone win</li>
+  <li>End game if board become full</li>
 </ul>
 
 ### Built With
@@ -37,13 +43,29 @@ The lesson can be see in [Odin Project](https://www.theodinproject.com/courses/r
 
 ## Live Demo
 
-[Run on Repl.it](https://repl.it/@ThiagoMiranda2/TicTacToe_Ruby)
+To play online, go to the page and hit (Run) button.
+[Run on Repl.it](https://repl.it/@ThiagoMiranda2/tictactoeruby)
 
 ## Quick Start
 
-To get a local copy use:<br>
+#### Get a local copy with:<br>
 ```js
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
+```
+Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
+
+#### Run on terminal/prompt:
+
+If you are on windows:
+* Go inside the project folder
+* Right shift '+' right mouse click (Float menu)
+* Open prompt here (Option)
+```js
+ruby bin/main.rb
+```
+For linux:
+```js
+bin/main.rb
 ```
 
 ### Dependencies
