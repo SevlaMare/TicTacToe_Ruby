@@ -1,10 +1,12 @@
-require 'rspec/autorun' # vscode
-# require_relative '../bin/main.rb'
 require_relative '../lib/board.rb'
 require_relative '../lib/engine.rb'
 
-# describe engine do
-RSpec.describe Engine do # vscode
+#  --- VScode setup ---
+# require 'rspec/autorun'
+# RSpec.describe Enumerable do
+#  --- VScode setup end ---
+
+describe Engine do
   let(:game1) { Engine.new }
   let(:field_win) { ['x', 'x', 'x', 4, 5, 6, 7, 8, 9] }
 
@@ -53,14 +55,14 @@ RSpec.describe Engine do # vscode
     end
 
     context '#spot_taken?' do
-      it 'First valid input' do
+      it 'Should be not taken' do
         expect(game1.spot_taken?(1))
           .to eq(false)
       end
     end
 
     context '#win?' do
-      it 'First valid input' do
+      it 'Should not have a win' do
         expect(game1.win?(1))
           .to eq(false)
       end
