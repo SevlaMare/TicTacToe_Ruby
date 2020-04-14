@@ -36,6 +36,5 @@ RSpec.describe Engine do # vscode
         expect(game1.spot_taken?(field1)).to eq(false)
       end
     end
-    
   end
 end
