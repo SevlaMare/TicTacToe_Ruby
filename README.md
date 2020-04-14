@@ -24,8 +24,8 @@ spec/main_spec.rb
 <br>
 
 The files tested are:<br>
-bin/main.rb
-lib/board.rb
+bin/main.rb<br>
+lib/board.rb<br>
 lib/engine.rb
 <br>
 
