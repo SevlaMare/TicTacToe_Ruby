@@ -19,6 +19,12 @@ The project specifications can be see in [Odin Project](https://www.theodinproje
 * [License](#license)
 
 
+## Game rules.
+* Two players play
+* Each play draw X or O alternately on board
+* The game ends when someone get 3 marks in a row
+* The row can be vertical, horizontal or diagonal 
+
 ## Requirements
 
 <ul>
@@ -43,9 +49,24 @@ To play online, go to the page and hit (Run) button.
 
 ## Quick Start
 
-To get a local copy use:<br>
+#### Get a local copy with:<br>
 ```js
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
+```
+Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
+
+#### Run on terminal/prompt:
+
+If you are on windows:
+* Go inside the project folder
+* Right shift '+' right mouse click (Float menu)
+* Open prompt here (Option)
+```js
+ruby bin/main.rb
+```
+for linux:
+```js
+bin/main.rb
 ```
 
 ### Dependencies
