@@ -1,6 +1,1 @@
-bin/test1.rb
-bin/test2.rb
-bin/test3.rb
-spec/*
-.rspec
 .vscode
