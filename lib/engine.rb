@@ -1,6 +1,6 @@
 class Engine < Board
-  def input_number?(choice)
-    choice.between?(1, 9)
+  def input_number?(choice, player)
+    choice.between?(1, 9) && player.between?(1, 2)
   end
 
   def spot_taken?(choice)

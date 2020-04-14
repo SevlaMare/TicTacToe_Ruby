@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require_relative '../lib/board.rb'
 require_relative '../lib/engine.rb'
 
@@ -14,7 +15,7 @@ while play
       puts("\nPlayer #{i} make your move\n(Choice between 1-9):")
       choice = STDIN.gets.chomp.to_i
 
-      if game.input_number?(choice)
+      if game.input_number?(choice, player)
         if !game.spot_taken?(choice)
           game.board_update(choice, player)
           puts game.board_display

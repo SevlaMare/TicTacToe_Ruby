@@ -18,6 +18,13 @@ class Board
 
   def board_update(choice, player)
     choice -= 1
-    @field[choice] = (player == 1 ? 'x' : 'o')
+
+    if player == 1
+      @field[choice] = 'x'
+    elsif player == 2
+      @field[choice] = 'o'
+    else
+      false
+    end
   end
 end
