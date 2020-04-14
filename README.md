@@ -18,22 +18,6 @@ The project specifications can be see in [Odin Project](https://www.theodinproje
 * [Author](#author)
 * [License](#license)
 
-### Test Suit Setup (REMOVE BEFORE MERGE MASTER!)
-The test suit is:<br>
-spec/main_spec.rb
-<br>
-
-The files tested are:<br>
-bin/main.rb<br>
-lib/board.rb<br>
-lib/engine.rb
-<br>
-
-To run the tests, on terminal type:
-```js
-rspec --format documentation
-```
-
 ## Game rules.
 * Two players play
 * Each play draw X or O alternately on board
