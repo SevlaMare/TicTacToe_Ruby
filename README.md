@@ -1,16 +1,15 @@
 # Tic Tac Toe
-> A quick classic mini game to play by command line.
+> A quick classic mini-game to play by command line.
 
 ![screenshot](./images/screenshot.png)
 
-<br>The focus here is to use oriented programming concepts.<br>
-The project specifications can be see in [Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+<br>The focus here is to explore object-oriented programming concepts.<br>
 
 ## Content
 
+* [Live Demo](#live-demo)
 * [Requirements](#requirements)
 * [Built With](#built-with)
-* [Live Demo](#live-demo)
 * [Quick Start](#quick-start)
 * [Dependencies](#dependencies)
 * [Contributing](#contributing)
@@ -18,11 +17,19 @@ The project specifications can be see in [Odin Project](https://www.theodinproje
 * [Author](#author)
 * [License](#license)
 
+
+## Live Demo
+
+To play online, go to the page and hit the (Run) button.
+[Run on Repl.it](https://repl.it/@ThiagoMiranda2/tictactoeruby)
+
+
 ## Game rules.
 * Two players play
 * Each play draw X or O alternately on board
-* The game ends when someone get 3 marks in a row
+* The game ends when someone gets 3 marks in a row
 * The row can be vertical, horizontal or diagonal 
+
 
 ## Requirements
 
@@ -41,10 +48,6 @@ The project specifications can be see in [Odin Project](https://www.theodinproje
 - Rspec (Unit testing) <br>
 - Git (with Gitflow), Github and VScode <br>
 
-## Live Demo
-
-To play online, go to the page and hit (Run) button.
-[Run on Repl.it](https://repl.it/@ThiagoMiranda2/tictactoeruby)
 
 ## Quick Start
 
@@ -52,7 +55,7 @@ To play online, go to the page and hit (Run) button.
 ```js
 git clone git@github.com:SevlaMare/TicTacToe_Ruby.git
 ```
-Or just hit (Download Zip) on green button (Clone or Download) on top of this page.
+Or just hit (Download Zip) on the green button (Code) on top of this page.
 
 #### Run on terminal/prompt:
 
@@ -78,9 +81,11 @@ Contributions, issues and feature requests are welcome!
 
 You can do it on [issues page](issues/).
 
+
 ## Acknowledgments
 
-A special thanks for the code reviewers.
+A special thanks to the code reviewers.
+
 
 ## Author
 
@@ -88,7 +93,7 @@ A special thanks for the code reviewers.
 
 - Github: [@SevlaMare](https://github.com/SevlaMare)
 - Twitter: [#SevlaMare)](https://twitter.com/SevlaMare)
-- Linkedin: [SevlaMare)](https://www.linkedin.com/in/sevlamare)
+- Linkedin: [SevlaMare)](https://www.linkedin.com/in/sevla-mare)
 
 ### License
 
